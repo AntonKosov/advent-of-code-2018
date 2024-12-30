@@ -27,6 +27,10 @@ func (pq *Heap[T]) Empty() bool {
 	return pq.Len() == 0
 }
 
+func (pq *Heap[T]) Peek() T {
+	return pq.impl.items[0]
+}
+
 type heapImpl[T any] struct {
 	items []T
 	less  func(T, T) bool
