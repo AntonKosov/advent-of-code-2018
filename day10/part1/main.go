@@ -49,7 +49,7 @@ func pointsToImage(points []Point) string {
 	leftTop, bottomRight := bounds(points)
 	height := bottomRight.Y - leftTop.Y + 1
 	width := bottomRight.X - leftTop.X + 1
-	img := slice.New2D[rune](width, height)
+	img := slice.New2D[rune](height, width)
 	slice.Fill2D(img, ' ')
 	for _, p := range points {
 		pos := p.position.Sub(leftTop)

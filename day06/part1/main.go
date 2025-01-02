@@ -26,7 +26,7 @@ func read() []math.Vector2[int] {
 
 func process(points []math.Vector2[int]) int {
 	width, height := moveToOrigin(points)
-	closest := slice.New2D[int](width, height)
+	closest := slice.New2D[int](height, width)
 	findClosest(closest, points)
 	infinite := findInfinite(closest)
 	largestArea := 0
